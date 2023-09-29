@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>mozilla-django-oidc - SP documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "mozilla-django-oidc";
+        var mkdocs_page_input_path = "Own server-side applications/OIDC + Python Django/mozilla-django-oidc.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../index.html" class="icon icon-home"> SP documentation
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Existing applications</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">SAML</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Existing%20applications/SAML/gitlab.html">GitLab</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Existing%20applications/SAML/sentry.html">Sentry</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Frontend applications</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">OIDC</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Frontend%20applications/OIDC/expo_authsession.html">Expo AuthSession</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Other applications</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Apache web server</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Other%20applications/Apache%20web%20server/mod_auth_openidc.html">mod_auth_openidc</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Other%20applications/Apache%20web%20server/mod_oauth2.html">mod_oauth2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Other%20applications/Apache%20web%20server/shibboleth_sp.html">Shibboleth SP 3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Other applications without a web server</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Other%20applications/Other%20applications%20without%20a%20web%20server/oauth2_proxy.html">OAuth2 Proxy</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Own server side applications</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="#">OIDC + PHP</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../OIDC%20%2B%20PHP/php_openid_connect_basic_client.html">PHP OpenID Connect Basic Client</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">OIDC + Python Django</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="mozilla-django-oidc.html">mozilla-django-oidc</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#initial-state">Initial state</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#registration-information">Registration information</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#additional-resources">Additional resources</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">SAML + PHP</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../SAML%20%2B%20PHP/simplesamlphp.html">SimpleSAMLphp</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SP documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html" class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Own server side applications &raquo;</li>
+          <li>OIDC + Python Django &raquo;</li>
+      <li>mozilla-django-oidc</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="mozilla-django-oidc">mozilla-django-oidc</h1>
+<p>A library for the Python Django framework (and Django REST framework), which allows OIDC authentication for a web application or API.</p>
+<h2 id="initial-state">Initial state</h2>
+<ul>
+<li>This guide assumes that your Django application or API is available at <code>https://sp.example.org/</code>.</li>
+</ul>
+<h2 id="registration-information">Registration information</h2>
+<ul>
+<li>First perform the OIDC client registration, upon which you will recieve a <strong>client_id</strong> (YOUR_CLIENT_ID) and a <strong>client_secret</strong> (YOUR_CLIENT_SECRET). Use the following in the registration process:<ul>
+<li><strong>redirect_uri</strong>: <code>https://sp.example.org/oauth2/callback/</code></li>
+<li><strong>scopes</strong>: openid, profile, email</li>
+<li><strong>authetication flow</strong>: authorization code flow</li>
+<li><strong>PKCE</strong>: none</li>
+<li><strong>token endpoint authentication</strong>: client_secret_basic</li>
+</ul>
+</li>
+</ul>
+<h2 id="configuration">Configuration</h2>
+<ol>
+<li>
+<p>Activate the library by <a href="https://mozilla-django-oidc.readthedocs.io/en/stable/installation.html#add-settings-to-settings-py">editing the <strong>settings.py</strong> file</a>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Add &#39;mozilla_django_oidc&#39; to INSTALLED_APPS</span>
+<span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="c1"># ...</span>
+    <span class="s1">&#39;django.contrib.auth&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;mozilla_django_oidc&#39;</span><span class="p">,</span>  <span class="c1"># Load after auth</span>
+    <span class="c1"># ...</span>
+<span class="p">)</span>
+
+<span class="c1"># Add &#39;mozilla_django_oidc&#39; authentication backend</span>
+<span class="n">AUTHENTICATION_BACKENDS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s1">&#39;mozilla_django_oidc.auth.OIDCAuthenticationBackend&#39;</span><span class="p">,</span>
+    <span class="c1"># ...</span>
+<span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>Add the following lines to the same <strong>settings.py</strong> file:</p>
+<div class="highlight"><pre><span></span><code><span class="n">OIDC_RP_CLIENT_ID</span> <span class="o">=</span> <span class="s2">&quot;YOUR_CLIENT_ID&quot;</span>
+<span class="n">OIDC_RP_CLIENT_SECRET</span> <span class="o">=</span> <span class="s2">&quot;YOUR_CLIENT_SECRET&quot;</span>
+<span class="n">OIDC_OP_JWKS_ENDPOINT</span> <span class="o">=</span> <span class="s2">&quot;https://proxy.aai.lifescience-ri.eu/OIDC/jwks&quot;</span>
+<span class="n">OIDC_OP_AUTHORIZATION_ENDPOINT</span> <span class="o">=</span> <span class="s2">&quot;https://proxy.aai.lifescience-ri.eu/saml2sp/OIDC/authorization&quot;</span>
+<span class="n">OIDC_OP_TOKEN_ENDPOINT</span> <span class="o">=</span> <span class="s2">&quot;https://proxy.aai.lifescience-ri.eu/OIDC/token&quot;</span>
+<span class="n">OIDC_OP_USER_ENDPOINT</span> <span class="o">=</span> <span class="s2">&quot;https://proxy.aai.lifescience-ri.eu/OIDC/userinfo&quot;</span>
+<span class="n">OIDC_RP_SIGN_ALGO</span> <span class="o">=</span> <span class="s2">&quot;RS256&quot;</span>
+<span class="n">OIDC_RP_SCOPES</span> <span class="o">=</span> <span class="s2">&quot;openid profile email&quot;</span>
+<span class="n">OIDC_TOKEN_USE_BASIC_AUTH</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">OIDC_STORE_ID_TOKEN</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">OIDC_VERIFY_KID</span> <span class="o">=</span> <span class="kc">False</span>
+</code></pre></div>
+</li>
+<li>
+<p>Edit the <strong>urls.py</strong> file by adding the argument <code>path('oidc/', include('mozilla_django_oidc.urls'))</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># ...</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;oidc/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s1">&#39;mozilla_django_oidc.urls&#39;</span><span class="p">)),</span>
+    <span class="c1"># ...</span>
+<span class="p">]</span>
+</code></pre></div>
+</li>
+<li>
+<p>Decide on how will the user accounts in the Django application be paired to the login data and the follow the <a href="https://mozilla-django-oidc.readthedocs.io/en/stable/installation.html#connecting-oidc-user-identities-to-django-users">linked instructions</a>.</p>
+</li>
+<li>
+<p>Decide on whether user accounts should be assigned automatically to every logged in user.</p>
+<ul>
+<li>If <strong>yes</strong>, follow the <a href="https://mozilla-django-oidc.readthedocs.io/en/stable/installation.html#creating-django-users">referred instructions</a>.</li>
+<li>
+<p>If <strong>no</strong>, add the following line to the <strong>settings.py</strong> file:</p>
+<div class="highlight"><pre><span></span><code><span class="n">OIDC_CREATE_USER</span> <span class="o">=</span> <span class="kc">False</span>
+</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p>If your application has a web interface, <a href="https://mozilla-django-oidc.readthedocs.io/en/stable/installation.html#enable-login-and-logout-functionality-in-templates">create a login button or link</a>.</p>
+</li>
+<li>If your application provides an API through the Django REST framework, continue with its <a href="https://mozilla-django-oidc.readthedocs.io/en/stable/drf.html">integration process</a>.</li>
+</ol>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li>Additional optional configuration: <a href="https://mozilla-django-oidc.readthedocs.io/en/stable/installation.html#additional-optional-configuration">https://mozilla-django-oidc.readthedocs.io/en/stable/installation.html#additional-optional-configuration</a></li>
+<li>More settings options: <a href="https://mozilla-django-oidc.readthedocs.io/en/stable/settings.html">https://mozilla-django-oidc.readthedocs.io/en/stable/settings.html</a></li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../OIDC%20%2B%20PHP/php_openid_connect_basic_client.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../SAML%20%2B%20PHP/simplesamlphp.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

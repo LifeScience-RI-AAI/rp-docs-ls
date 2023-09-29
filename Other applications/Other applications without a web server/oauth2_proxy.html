@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>OAuth2 Proxy - SP documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "OAuth2 Proxy";
+        var mkdocs_page_input_path = "Other applications/Other applications without a web server/oauth2_proxy.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../index.html" class="icon icon-home"> SP documentation
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Existing applications</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">SAML</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Existing%20applications/SAML/gitlab.html">GitLab</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Existing%20applications/SAML/sentry.html">Sentry</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Frontend applications</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">OIDC</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Frontend%20applications/OIDC/expo_authsession.html">Expo AuthSession</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Other applications</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="#">Apache web server</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Apache%20web%20server/mod_auth_openidc.html">mod_auth_openidc</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Apache%20web%20server/mod_oauth2.html">mod_oauth2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Apache%20web%20server/shibboleth_sp.html">Shibboleth SP 3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Other applications without a web server</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="oauth2_proxy.html">OAuth2 Proxy</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#initial-state">Initial state</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#registration-information">Registration information</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#additional-resources">Additional resources</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Own server side applications</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">OIDC + PHP</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Own%20server-side%20applications/OIDC%20%2B%20PHP/php_openid_connect_basic_client.html">PHP OpenID Connect Basic Client</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">OIDC + Python Django</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Own%20server-side%20applications/OIDC%20%2B%20Python%20Django/mozilla-django-oidc.html">mozilla-django-oidc</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">SAML + PHP</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Own%20server-side%20applications/SAML%20%2B%20PHP/simplesamlphp.html">SimpleSAMLphp</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SP documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html" class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Other applications &raquo;</li>
+          <li>Other applications without a web server &raquo;</li>
+      <li>OAuth2 Proxy</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="oauth2-proxy">OAuth2 Proxy</h1>
+<p>A reverse proxy for connecting applications, websites or APIs that do not support OIDC authentication. It is possible to use it standalone or combined with nginx reverse proxy. If you are using Apache, use <a href="../Apache%20web%20server/mod_auth_openidc.html">mod_auth_openidc</a> instead.</p>
+<h2 id="initial-state">Initial state</h2>
+<ul>
+<li>This guide assumes that your server is located at <code>https://sp.example.org/</code> and that it is running an application or API with HTTP interface on port 8080.</li>
+</ul>
+<h2 id="registration-information">Registration information</h2>
+<ul>
+<li>First perform the OIDC client registration, upon which you will recieve a <strong>client_id</strong> (YOUR_CLIENT_ID) and a <strong>client_secret</strong> (YOUR_CLIENT_SECRET). Use the following in the registration process:<ul>
+<li><strong>redirect_uri</strong>: <code>https://sp.example.org/oauth2/callback</code></li>
+<li><strong>scopes</strong>: openid, email</li>
+<li><strong>authentication flow</strong>: authorization code flow</li>
+</ul>
+</li>
+</ul>
+<h2 id="configuration">Configuration</h2>
+<ol>
+<li>Perform step 1 from the <a href="https://oauth2-proxy.github.io/oauth2-proxy/docs/">linked guide</a>.</li>
+<li>
+<p>Create a <strong>/etc/oauth2-proxy.cfg</strong> file with the following contents:</p>
+<div class="highlight"><pre><span></span><code><span class="na">upstreams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">[</span>
+<span class="w">    </span><span class="na">&quot;http</span><span class="o">:</span><span class="s">//127.0.0.1:8080/&quot;</span>
+<span class="na">]</span>
+<span class="na">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;oidc&quot;</span>
+<span class="na">oidc_issuer_url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://proxy.aai.lifescience-ri.eu/&quot;</span>
+<span class="na">scope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;openid email&quot;</span>
+<span class="na">insecure_oidc_allow_unverified_email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
+<span class="na">client_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;YOUR_CLIENT_ID&quot;</span>
+<span class="na">client_secret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;YOUR_CLIENT_SECRET&quot;</span>
+<span class="na">insecure_oidc_skip_nonce</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">false</span>
+<span class="na">session_cookie_minimal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
+<span class="na">email_domains</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;*&quot;</span>
+<span class="na">skip_provider_button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
+<span class="na">whitelist_domains</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">[</span>
+<span class="w">    </span><span class="na">&quot;proxy.aai.lifescience-ri.eu&quot;</span>
+<span class="na">]</span>
+</code></pre></div>
+</li>
+<li>
+<p>The third step is dependent on whether you are using a reverse proxy.</p>
+<ol>
+<li>
+<p>If you are using <strong>nginx</strong> as a <strong>reverse proxy combined with OAuth2 Proxy</strong>, add the following lines to the end of the file being created and then follow the <a href="https://oauth2-proxy.github.io/oauth2-proxy/docs/configuration/overview#configuring-for-use-with-the-nginx-auth_request-directive">linked instructions</a> specific for this case.</p>
+<div class="highlight"><pre><span></span><code><span class="na">reverse_proxy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
+<span class="na">http_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;127.0.0.1:4180&quot;</span>
+<span class="na">set_xauthrequest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
+</code></pre></div>
+</li>
+<li>
+<p>If you are not using nginx and are running <strong>only OAuth2 Proxy</strong>, add the following lines to the end of the file being created (where <strong>/opt/https-cert.pem</strong> and *<em>/opt/https-key.pem</em> are the certificate and the key for HTTPS of your server sp.example.org/):</p>
+<div class="highlight"><pre><span></span><code><span class="na">tls_cert_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/opt/https-cert.pem&quot;</span>
+<span class="na">tls_key_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/opt/https-key.pem&quot;</span>
+<span class="na">http_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;sp.example.com:80&quot;</span>
+<span class="na">https_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;sp.example.com:443&quot;</span>
+</code></pre></div>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://oauth2-proxy.github.io/oauth2-proxy/docs/configuration/overview/#generating-a-cookie-secret">Generate a cookie secret</a>, e.g. with this command:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;import os,base64; print(base64.urlsafe_b64encode(os.urandom(32)).decode())&#39;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Add the following address to the <strong>/etc/oauth2-proxy.cfg</strong> file, where YOUR_GENERATED_SECRET is your generated value.</p>
+<div class="highlight"><pre><span></span><code><span class="na">cookie_secret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;YOUR_GENERATED_SECRET&quot;</span>
+</code></pre></div>
+</li>
+<li>
+<p>If your application supports API and you want to enable its calling through OIDC bearer tokens, add this line to the <strong>/etc/oauth2-proxy.cfg</strong> file:</p>
+<div class="highlight"><pre><span></span><code><span class="na">skip_jwt_bearer_tokens</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
+</code></pre></div>
+</li>
+</ol>
+<p>This will enable using tokens issued for the client_id of your application (YOUR_CLIENT_ID).</p>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li>More configuration options: <a href="https://oauth2-proxy.github.io/oauth2-proxy/docs/configuration/overview">https://oauth2-proxy.github.io/oauth2-proxy/docs/configuration/overview</a></li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Apache%20web%20server/shibboleth_sp.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../Own%20server-side%20applications/OIDC%20%2B%20PHP/php_openid_connect_basic_client.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

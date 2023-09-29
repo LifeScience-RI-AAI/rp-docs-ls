@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>PHP OpenID Connect Basic Client - SP documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "PHP OpenID Connect Basic Client";
+        var mkdocs_page_input_path = "Own server-side applications/OIDC + PHP/php_openid_connect_basic_client.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../index.html" class="icon icon-home"> SP documentation
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Existing applications</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">SAML</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Existing%20applications/SAML/gitlab.html">GitLab</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Existing%20applications/SAML/sentry.html">Sentry</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Frontend applications</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">OIDC</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Frontend%20applications/OIDC/expo_authsession.html">Expo AuthSession</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Other applications</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Apache web server</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Other%20applications/Apache%20web%20server/mod_auth_openidc.html">mod_auth_openidc</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Other%20applications/Apache%20web%20server/mod_oauth2.html">mod_oauth2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Other%20applications/Apache%20web%20server/shibboleth_sp.html">Shibboleth SP 3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Other applications without a web server</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Other%20applications/Other%20applications%20without%20a%20web%20server/oauth2_proxy.html">OAuth2 Proxy</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Own server side applications</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">OIDC + PHP</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="php_openid_connect_basic_client.html">PHP OpenID Connect Basic Client</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#initial-state">Initial state</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#registration-information">Registration information</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">OIDC + Python Django</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../OIDC%20%2B%20Python%20Django/mozilla-django-oidc.html">mozilla-django-oidc</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">SAML + PHP</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../SAML%20%2B%20PHP/simplesamlphp.html">SimpleSAMLphp</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SP documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html" class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Own server side applications &raquo;</li>
+          <li>OIDC + PHP &raquo;</li>
+      <li>PHP OpenID Connect Basic Client</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="php-openid-connect-basic-client">PHP OpenID Connect Basic Client</h1>
+<p>A PHP language library which allows OIDC authentication for a web application or API.</p>
+<h2 id="initial-state">Initial state</h2>
+<ul>
+<li>This guide assumes that you have a PHP application located at <code>https://sp.example.org/</code>.</li>
+</ul>
+<h2 id="registration-information">Registration information</h2>
+<ul>
+<li>First perform the registration, upon which you will recieve a <strong>client_id</strong> (YOUR_CLIENT_ID) and a <strong>client_secret</strong> (YOUR_CLIENT_SECRET). Use the following in the registration process:<ul>
+<li><strong>redirect_uri</strong>: <code>https://sp.example.org/callback.php</code></li>
+<li><strong>scopes</strong>: openid, profile, email</li>
+<li><strong>authentication flow</strong>: authorization code flow</li>
+<li><strong>PKCE</strong>: S256</li>
+<li><strong>token endpoint authentication</strong>: client_secret_basic</li>
+</ul>
+</li>
+</ul>
+<h2 id="configuration">Configuration</h2>
+<ol>
+<li>
+<p>Install the library through the <a href="https://getcomposer.org/download/">composer</a>:</p>
+<div class="highlight"><pre><span></span><code>composer<span class="w"> </span>require<span class="w"> </span>jumbojett/openid-connect-php
+</code></pre></div>
+</li>
+<li>
+<p>Create a <strong>callback.php</strong> file available at <code>https://sp.example.org/callback.php</code> with the following contents:</p>
+<div class="highlight"><pre><span></span><code><span class="x">require __DIR__ . &#39;/vendor/autoload.php&#39;;</span>
+
+<span class="x">use Jumbojett\OpenIDConnectClient;</span>
+
+<span class="x">$oidc = new OpenIDConnectClient(&#39;https://proxy.aai.lifescience-ri.eu/&#39;,</span>
+<span class="x">                                &#39;YOUR_CLIENT_ID&#39;,</span>
+<span class="x">                                &#39;YOUR_CLIENT_SECRET&#39;);</span>
+<span class="x">$oidc-&gt;addScope([&#39;openid&#39;, &#39;profile&#39;, &#39;email&#39;]);</span>
+<span class="x">$oidc-&gt;setCodeChallengeMethod(&#39;S256&#39;);</span>
+<span class="x">$oidc-&gt;authenticate();</span>
+<span class="x">$userID = $oidc-&gt;getVerifiedClaims(&#39;sub&#39;);</span>
+<span class="x">$userInfo = $oidc-&gt;requestUserInfo();</span>
+</code></pre></div>
+<p>Variable <strong>$userID</strong> here contains the ID of an user, who logged in. Variable <strong>$userInfo</strong> contains the user's data (name and email).</p>
+</li>
+<li>
+<p>Optional: if a part of the application is an API that is to be protected by OAuth2 authentication, add the following to the beginning of the file providing the API:</p>
+<div class="highlight"><pre><span></span><code><span class="x">require __DIR__ . &#39;/vendor/autoload.php&#39;;</span>
+
+<span class="x">use Jumbojett\OpenIDConnectClient;</span>
+
+<span class="x">$oidc = new OpenIDConnectClient(&#39;https://proxy.aai.lifescience-ri.eu/&#39;,</span>
+<span class="x">                                &#39;YOUR_CLIENT_ID&#39;,</span>
+<span class="x">                                &#39;YOUR_CLIENT_SECRET&#39;);</span>
+<span class="x">$headers = getallheaders();</span>
+<span class="x">if (!empty($headers[&quot;Authorization&quot;]) &amp;&amp; preg_match(&#39;/^Bearer\s(\S+)$/&#39;, $headers[&#39;Authorization&#39;], $matches)) {</span>
+<span class="x">    $data = $oidc-&gt;introspectToken($matches[1]);</span>
+<span class="x">} else {</span>
+<span class="x">    $data = null;</span>
+<span class="x">}</span>
+
+<span class="x">if (!$data || !$data-&gt;active) {</span>
+<span class="x">    header(&#39;HTTP/1.1 401 Unauthorized&#39;);</span>
+<span class="x">    header(&#39;WWW-Authenticate: Bearer&#39;);</span>
+<span class="x">    exit;</span>
+<span class="x">}</span>
+<span class="x">$userID = $data-&gt;sub;</span>
+</code></pre></div>
+<p>Variable <strong>$userID</strong> here contains the ID of the user who called the API.</p>
+</li>
+</ol>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../Other%20applications/Other%20applications%20without%20a%20web%20server/oauth2_proxy.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../OIDC%20%2B%20Python%20Django/mozilla-django-oidc.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

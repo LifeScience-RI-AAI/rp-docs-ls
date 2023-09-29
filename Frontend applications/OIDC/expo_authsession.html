@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Expo AuthSession - SP documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Expo AuthSession";
+        var mkdocs_page_input_path = "Frontend applications/OIDC/expo_authsession.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../index.html" class="icon icon-home"> SP documentation
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Existing applications</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">SAML</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Existing%20applications/SAML/gitlab.html">GitLab</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Existing%20applications/SAML/sentry.html">Sentry</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Frontend applications</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">OIDC</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="expo_authsession.html">Expo AuthSession</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#initial-state">Initial state</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#registration-information">Registration information</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#additional-resources">Additional resources</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Other applications</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Apache web server</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Other%20applications/Apache%20web%20server/mod_auth_openidc.html">mod_auth_openidc</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Other%20applications/Apache%20web%20server/mod_oauth2.html">mod_oauth2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Other%20applications/Apache%20web%20server/shibboleth_sp.html">Shibboleth SP 3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Other applications without a web server</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Other%20applications/Other%20applications%20without%20a%20web%20server/oauth2_proxy.html">OAuth2 Proxy</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Own server side applications</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">OIDC + PHP</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Own%20server-side%20applications/OIDC%20%2B%20PHP/php_openid_connect_basic_client.html">PHP OpenID Connect Basic Client</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">OIDC + Python Django</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Own%20server-side%20applications/OIDC%20%2B%20Python%20Django/mozilla-django-oidc.html">mozilla-django-oidc</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">SAML + PHP</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Own%20server-side%20applications/SAML%20%2B%20PHP/simplesamlphp.html">SimpleSAMLphp</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SP documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html" class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Frontend applications &raquo;</li>
+          <li>OIDC &raquo;</li>
+      <li>Expo AuthSession</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="expo-authsession">Expo AuthSession</h1>
+<p>AuthSession is a library for the Expo framework that makes authentication through the OAuth or OIDC protocols significantly easier. It is used for integrating native or hybrid applications (mobile applications with possible web versions).</p>
+<h2 id="initial-state">Initial state</h2>
+<ul>
+<li>
+<p>This guide assumes that you have a project (application) in the Expo framework in managed workflow.</p>
+<ul>
+<li>
+<p>You can create it e.g. through the command:</p>
+<div class="highlight"><pre><span></span><code>npx<span class="w"> </span>create-expo-app<span class="w"> </span>my-app
+</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p>Create a link scheme, e.g. "myapp" (a short string with only lowercase english characters). If your application has a web version, this guide assumes it is located at <code>https://sp.example.org</code>.</p>
+</li>
+</ul>
+<h2 id="registration-information">Registration information</h2>
+<ul>
+<li>First perform the OIDC client registration, upon which you will recieve a <strong>client_id</strong> (YOUR_CLIENT_ID). Use the following in the registration process:<ul>
+<li><strong>redirect_uri</strong>:<ul>
+<li><code>myapp://redirect</code></li>
+<li><code>https://sp.example.org</code></li>
+<li><code>exp://localhost:19000</code></li>
+</ul>
+</li>
+<li><strong>scopes</strong>: openid, profile, email</li>
+<li><strong>authentication flow</strong>: authorization code flow</li>
+<li><strong>PKCE</strong>: S256</li>
+<li><strong>token endpoint authentication</strong>: none</li>
+</ul>
+</li>
+<li>You will not need a client_secret.</li>
+</ul>
+<h2 id="configuration">Configuration</h2>
+<ol>
+<li>
+<p><a href="https://docs.expo.dev/versions/latest/sdk/auth-session/#installation">Install</a> the <strong>AuthSession</strong> library
+   and its dependency:</p>
+<div class="highlight"><pre><span></span><code>npx<span class="w"> </span>expo<span class="w"> </span>install<span class="w"> </span>expo-auth-session<span class="w"> </span>expo-random
+</code></pre></div>
+</li>
+<li>
+<p>Set up the desired link scheme in the configuration file (<strong>app.config.js</strong> or <strong>app.json</strong>) - e.g. for app.json:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;expo&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;scheme&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;myapp&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>Add a button and authentication logic in the application code (in the main <strong>App.js</strong> file), e.g. like so:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">WebBrowser</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;expo-web-browser&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">makeRedirectUri</span><span class="p">,</span><span class="w"> </span><span class="nx">useAuthRequest</span><span class="p">,</span><span class="w"> </span><span class="nx">useAutoDiscovery</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;expo-auth-session&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Button</span><span class="p">,</span><span class="w"> </span><span class="nx">Platform</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-native&#39;</span><span class="p">;</span>
+
+<span class="nx">WebBrowser</span><span class="p">.</span><span class="nx">maybeCompleteAuthSession</span><span class="p">();</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">clientId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;YOUR_CLIENT_ID&#39;</span><span class="p">;</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">authTokens</span><span class="p">,</span><span class="w"> </span><span class="nx">setAuthTokens</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">React</span><span class="p">.</span><span class="nx">useState</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">discoveryDocument</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useAutoDiscovery</span><span class="p">(</span><span class="s1">&#39;https://proxy.aai.lifescience-ri.eu/&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">redirectUri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">makeRedirectUri</span><span class="p">({</span><span class="kr">native</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;myapp://redirect&#39;</span><span class="p">});</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">request</span><span class="p">,</span><span class="w"> </span><span class="nx">response</span><span class="p">,</span><span class="w"> </span><span class="nx">promptAsync</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useAuthRequest</span><span class="p">(</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">          </span><span class="nx">responseType</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;code&#39;</span><span class="p">,</span>
+<span class="w">           </span><span class="nx">clientId</span><span class="p">,</span>
+<span class="w">          </span><span class="nx">scopes</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;openid&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;profile&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;email&#39;</span><span class="p">],</span>
+<span class="w">          </span><span class="nx">redirectUri</span><span class="p">,</span>
+<span class="w">          </span><span class="nx">usePKCE</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">discoveryDocument</span>
+<span class="w">  </span><span class="p">);</span>
+
+<span class="w">  </span><span class="nx">React</span><span class="p">.</span><span class="nx">useEffect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">exchangeFn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">exchangeTokenReq</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="kd">const</span><span class="w"> </span><span class="nx">exchangeTokenResponse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">exchangeCodeAsync</span><span class="p">(</span>
+<span class="w">                  </span><span class="nx">exchangeTokenReq</span><span class="p">,</span>
+<span class="w">                  </span><span class="nx">discoveryDocument</span>
+<span class="w">              </span><span class="p">);</span>
+<span class="w">              </span><span class="nx">setAuthTokens</span><span class="p">(</span><span class="nx">exchangeTokenResponse</span><span class="p">);</span>
+<span class="w">          </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">      </span><span class="p">};</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">response</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="nx">Alert</span><span class="p">.</span><span class="nx">alert</span><span class="p">.(</span>
+<span class="w">                  </span><span class="s1">&#39;Authentication error&#39;</span><span class="p">,</span>
+<span class="w">                  </span><span class="nx">response</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">error_description</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;something went wrong&#39;</span>
+<span class="w">              </span><span class="p">);</span>
+<span class="w">              </span><span class="k">return</span><span class="p">;</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">type</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;success&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="nx">exchangeFn</span><span class="p">({</span>
+<span class="w">                  </span><span class="nx">clientId</span><span class="p">,</span>
+<span class="w">                  </span><span class="nx">code</span><span class="o">:</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">code</span><span class="p">,</span>
+<span class="w">                  </span><span class="nx">redirectUri</span><span class="p">,</span>
+<span class="w">                  </span><span class="nx">extraParams</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                      </span><span class="nx">code_verifier</span><span class="o">:</span><span class="w"> </span><span class="nx">request</span><span class="p">.</span><span class="nx">codeVerifier</span><span class="p">,</span>
+<span class="w">                  </span><span class="p">},</span>
+<span class="w">              </span><span class="p">});</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="p">[</span><span class="nx">discoveryDocument</span><span class="p">,</span><span class="w"> </span><span class="nx">request</span><span class="p">,</span><span class="w"> </span><span class="nx">response</span><span class="p">]);</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">authTokens</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">(</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">Button</span><span class="w"> </span><span class="nx">title</span><span class="o">=</span><span class="s2">&quot;Logout&quot;</span><span class="w"> </span><span class="nx">onPress</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">logout</span><span class="p">()}</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">(</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">Button</span><span class="w"> </span><span class="nx">disabled</span><span class="o">=</span><span class="p">{</span><span class="o">!</span><span class="nx">request</span><span class="p">}</span><span class="w"> </span><span class="nx">title</span><span class="o">=</span><span class="s2">&quot;Login&quot;</span><span class="w"> </span><span class="nx">onPress</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">promptAsync</span><span class="p">()}</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>The <strong>authTokens</strong> variable in the example above now contains the user's access token which can be used for calling an API protected by OAuth/OIDC authentication.</p>
+</li>
+<li>
+<p>Optional: for obtaining more user data (e.g. email addresses) use the following command:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">userData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fetchUserInfoAsync</span><span class="p">(</span><span class="nx">authTokens</span><span class="p">,</span><span class="w"> </span><span class="nx">discoveryDocument</span><span class="p">);</span>
+</code></pre></div>
+</li>
+</ol>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li>More information in Expo AuthSession documentation: <a href="https://docs.expo.dev/versions/latest/sdk/auth-session/">https://docs.expo.dev/versions/latest/sdk/auth-session/</a></li>
+<li>Sample authentication using React Navigation: <a href="https://reactnavigation.org/docs/auth-flow">https://reactnavigation.org/docs/auth-flow</a></li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../Existing%20applications/SAML/sentry.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../Other%20applications/Apache%20web%20server/mod_auth_openidc.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
