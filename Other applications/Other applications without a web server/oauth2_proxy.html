@@ -156,7 +156,7 @@
 <span class="w">    </span><span class="na">&quot;http</span><span class="o">:</span><span class="s">//127.0.0.1:8080/&quot;</span>
 <span class="na">]</span>
 <span class="na">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;oidc&quot;</span>
-<span class="na">oidc_issuer_url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://proxy.aai.lifescience-ri.eu/&quot;</span>
+<span class="na">oidc_issuer_url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;%OIDC_ISSUER%&quot;</span>
 <span class="na">scope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;openid email&quot;</span>
 <span class="na">insecure_oidc_allow_unverified_email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
 <span class="na">client_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;YOUR_CLIENT_ID&quot;</span>
@@ -166,7 +166,7 @@
 <span class="na">email_domains</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;*&quot;</span>
 <span class="na">skip_provider_button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
 <span class="na">whitelist_domains</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">[</span>
-<span class="w">    </span><span class="na">&quot;proxy.aai.lifescience-ri.eu&quot;</span>
+<span class="w">    </span><span class="na">&quot;%OIDC_HOSTNAME%&quot;</span>
 <span class="na">]</span>
 </code></pre></div>
 </li>

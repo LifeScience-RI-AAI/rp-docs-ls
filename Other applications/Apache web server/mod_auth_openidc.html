@@ -162,7 +162,7 @@
 </li>
 <li>
 <p>Add the following to the <strong>Apache VirtualHost</strong> configuration (usually located in <strong>/etc/apache2/sites-enabled/*.conf</strong>)</p>
-<div class="highlight"><pre><span></span><code><span class="nb">OIDCProviderMetadataURL</span><span class="w"> </span>https://proxy.aai.lifescience-ri.eu/.well-known/openid-configuration
+<div class="highlight"><pre><span></span><code><span class="nb">OIDCProviderMetadataURL</span><span class="w"> </span>%OIDC_WELL_KNOWN_URI%
 <span class="nb">OIDCClientID</span><span class="w"> </span>YOUR_CLIENT_ID
 <span class="nb">OIDCClientSecret</span><span class="w"> </span>YOUR_CLIENT_SECRET
 <span class="nb">OIDCRedirectURI</span><span class="w"> </span>https://sp.example.org/secure/redirect_uri

@@ -157,7 +157,7 @@
 <li>
 <p>Add the following to the <strong>Apache VirtualHost</strong> configuration (usually located in <strong>/etc/apache2/sites-enabled/*.conf</strong>), which allows access the API (e.g. a Location block containing ProxyPass) that is to be protected by OIDC token authentication:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">AuthType</span><span class="w"> </span>oauth2
-<span class="nb">OAuth2TokenVerify</span><span class="w"> </span>metadata<span class="w"> </span>https://proxy.aai.lifescience-ri.eu/.well-known/openid-configuration<span class="w"> </span>introspect.auth=client_secret_basic&amp;client_id=YOUR_CLIENT_ID&amp;client_secret=YOUR_CLIENT_SECRET
+<span class="nb">OAuth2TokenVerify</span><span class="w"> </span>metadata<span class="w"> </span>%OIDC_WELL_KNOWN_URI%<span class="w"> </span>introspect.auth=client_secret_basic&amp;client_id=YOUR_CLIENT_ID&amp;client_secret=YOUR_CLIENT_SECRET
 <span class="nb">OAuth2AcceptTokenIn</span><span class="w"> </span>header<span class="w"> </span>name=Authorization&amp;type=bearer
 <span class="nb">require</span><span class="w"> </span>valid-user
 </code></pre></div>

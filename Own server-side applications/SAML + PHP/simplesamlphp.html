@@ -149,7 +149,7 @@
 <span class="x">    &#39;saml:SP&#39;,</span>
 <span class="x">    &#39;certificate&#39; =&gt; &#39;example.crt&#39;,</span>
 <span class="x">    &#39;privatekey&#39; =&gt; &#39;example.key&#39;,</span>
-<span class="x">    &#39;idp&#39; =&gt; &#39;https://proxy.aai.lifescience-ri.eu/metadata/backend.xml&#39;,</span>
+<span class="x">    &#39;idp&#39; =&gt; &#39;%SAML_ENTITY_ID%&#39;,</span>
 <span class="x">    &#39;redirect.sign&#39; =&gt; true,</span>
 <span class="x">    &#39;redirect.validate&#39; =&gt; true,</span>
 <span class="x">    &#39;assertion.encryption&#39; =&gt; true,</span>
@@ -180,7 +180,7 @@
                 <span class="s1">&#39;cron&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;daily&#39;</span><span class="p">],</span>
                 <span class="s1">&#39;sources&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
                     <span class="p">[</span>
-                        <span class="s1">&#39;src&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;https://mdx.aai.lifescience-ri.eu/entities/https%3A%2F%2Fproxy.aai.lifescience-ri.eu%2Fmetadata%2Fbackend.xml&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;src&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;%SAML_METADATA_URL%&#39;</span><span class="p">,</span>
                     <span class="p">],</span>
                 <span class="p">],</span>
             <span class="s1">&#39;expireAfter&#39;</span> <span class="o">=&gt;</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">4</span><span class="p">,</span> <span class="c1">// Maximum 4 days cache time.</span>

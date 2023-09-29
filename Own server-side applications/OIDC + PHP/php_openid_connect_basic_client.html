@@ -160,7 +160,7 @@
 
 <span class="x">use Jumbojett\OpenIDConnectClient;</span>
 
-<span class="x">$oidc = new OpenIDConnectClient(&#39;https://proxy.aai.lifescience-ri.eu/&#39;,</span>
+<span class="x">$oidc = new OpenIDConnectClient(&#39;%OIDC_ISSUER%&#39;,</span>
 <span class="x">                                &#39;YOUR_CLIENT_ID&#39;,</span>
 <span class="x">                                &#39;YOUR_CLIENT_SECRET&#39;);</span>
 <span class="x">$oidc-&gt;addScope([&#39;openid&#39;, &#39;profile&#39;, &#39;email&#39;]);</span>
@@ -177,7 +177,7 @@
 
 <span class="x">use Jumbojett\OpenIDConnectClient;</span>
 
-<span class="x">$oidc = new OpenIDConnectClient(&#39;https://proxy.aai.lifescience-ri.eu/&#39;,</span>
+<span class="x">$oidc = new OpenIDConnectClient(&#39;%OIDC_ISSUER%&#39;,</span>
 <span class="x">                                &#39;YOUR_CLIENT_ID&#39;,</span>
 <span class="x">                                &#39;YOUR_CLIENT_SECRET&#39;);</span>
 <span class="x">$headers = getallheaders();</span>

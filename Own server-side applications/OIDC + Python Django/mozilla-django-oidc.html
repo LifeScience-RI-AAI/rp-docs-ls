@@ -172,10 +172,10 @@
 <p>Add the following lines to the same <strong>settings.py</strong> file:</p>
 <div class="highlight"><pre><span></span><code><span class="n">OIDC_RP_CLIENT_ID</span> <span class="o">=</span> <span class="s2">&quot;YOUR_CLIENT_ID&quot;</span>
 <span class="n">OIDC_RP_CLIENT_SECRET</span> <span class="o">=</span> <span class="s2">&quot;YOUR_CLIENT_SECRET&quot;</span>
-<span class="n">OIDC_OP_JWKS_ENDPOINT</span> <span class="o">=</span> <span class="s2">&quot;https://proxy.aai.lifescience-ri.eu/OIDC/jwks&quot;</span>
-<span class="n">OIDC_OP_AUTHORIZATION_ENDPOINT</span> <span class="o">=</span> <span class="s2">&quot;https://proxy.aai.lifescience-ri.eu/saml2sp/OIDC/authorization&quot;</span>
-<span class="n">OIDC_OP_TOKEN_ENDPOINT</span> <span class="o">=</span> <span class="s2">&quot;https://proxy.aai.lifescience-ri.eu/OIDC/token&quot;</span>
-<span class="n">OIDC_OP_USER_ENDPOINT</span> <span class="o">=</span> <span class="s2">&quot;https://proxy.aai.lifescience-ri.eu/OIDC/userinfo&quot;</span>
+<span class="n">OIDC_OP_JWKS_ENDPOINT</span> <span class="o">=</span> <span class="s2">&quot;%OIDC_JWKS_URI%&quot;</span>
+<span class="n">OIDC_OP_AUTHORIZATION_ENDPOINT</span> <span class="o">=</span> <span class="s2">&quot;%OIDC_AUTHORIZATION_ENDPOINT%&quot;</span>
+<span class="n">OIDC_OP_TOKEN_ENDPOINT</span> <span class="o">=</span> <span class="s2">&quot;%OIDC_TOKEN_ENDPOINT%&quot;</span>
+<span class="n">OIDC_OP_USER_ENDPOINT</span> <span class="o">=</span> <span class="s2">&quot;%OIDC_USERINFO_ENDPOINT%&quot;</span>
 <span class="n">OIDC_RP_SIGN_ALGO</span> <span class="o">=</span> <span class="s2">&quot;RS256&quot;</span>
 <span class="n">OIDC_RP_SCOPES</span> <span class="o">=</span> <span class="s2">&quot;openid profile email&quot;</span>
 <span class="n">OIDC_TOKEN_USE_BASIC_AUTH</span> <span class="o">=</span> <span class="kc">True</span>

@@ -145,11 +145,11 @@
 <h2 id="configuration">Configuration</h2>
 <ol>
 <li>In Sentry administration select <strong>User Authentication &gt; SSO</strong>.</li>
-<li>Enter https://mdx.aai.lifescience-ri.eu/entities/https%3A%2F%2Fproxy.aai.lifescience-ri.eu%2Fmetadata%2Fbackend.xml in the <strong>Metadata URL</strong> field.</li>
+<li>Enter %SAML_METADATA_URL% in the <strong>Metadata URL</strong> field.</li>
 <li>Press the <strong>Get metadata</strong> button.<ul>
 <li>If there is an error, Sentry most likely does not have internet access (e.g. due to the firewall). In that case, follow the steps below:<ol>
 <li>Select the <strong>XML</strong> tab.</li>
-<li>Download the contents of https://mdx.aai.lifescience-ri.eu/entities/https%3A%2F%2Fproxy.aai.lifescience-ri.eu%2Fmetadata%2Fbackend.xml and paste them in the <strong>Metadata XML</strong> field.</li>
+<li>Download the contents of %SAML_METADATA_URL% and paste them in the <strong>Metadata XML</strong> field.</li>
 <li>Confirm through the <strong>Parse Metadata</strong> button.</li>
 </ol>
 </li>
